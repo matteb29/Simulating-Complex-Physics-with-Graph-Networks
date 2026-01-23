@@ -1,6 +1,55 @@
 # Simulating-Complex-Physics-with-Graph-Networks
-This is our Project for the CMEPDA exam, it consists in a simplified version of the Graph-Net Simulator introduced by Sanchez-Gonzales et al. (DeepMind)
-in their paper "Learning to Simulate Complex Physics with Graph Networks".
-Particularly we reduced the problem to simulate the temporal evolution
+
+This is our Project for the CMEPDA exam.
+
+It consists of a simplified version of the Graph-Net Simulator introduced by *Sanchez-Gonzales et al.* in their paper **"Learning to Simulate Complex Physics with Graph Networks"(ICML 2020)**.
+
+We reduced the problem to simulate the temporal evolution
 of a complex system inside a 2D box (without obstacles in).
-Moreover as another simplification we considered only two separate materials: Water and Sand.
+As another simplification we considered only two separate materials: Water and Sand.
+
+
+<p align="center">
+  <img src="assets/simulation_demo.gif" width="800" />
+  <br>
+  <em> Example Result: Comparison between Ground Truth (Left) and GN Prediction (Right) for Sand.</em>
+</p>
+
+Datasets are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
+
+*Note* that in order to run our code data must be *converted from .tfrecord to .npz*
+and must preserve the original structure: train, test, split, metadata.
+
+Clone the repository:
+```bash
+git clone https://github.com/matteb29/Simulating-Complex-Physics-with-Graph-Networks.git
+```
+Move into the directory:
+```bash
+cd Simulating-Complex-Physics-with-Graph-Networks
+```
+
+Download the requirements:
+```bash
+pip install -r requirements.txt
+```
+
+Train the model with a specific Dataset (e.g. Sand):
+```bash
+mkdir model_checkpoints
+python train.py --mode=train --data_path=datasets/Sand --model_path=model_checkpoints
+```
+
+
+Create a rollout with the test set using a specific model (e.g. model_1000.pt)
+```bash
+mkdir rollout
+python train.py --mode=eval_rollout --eval_split=test --data_path=datasets/Sand --model_path=model_checkpoints/model_1000.pt --output_path=rollout
+```
+
+Visualize the comparison between Ground Truth and the generated rollout as a GIF (e.g. rollout_0.pkl)
+```bash
+mkdir video_simulation
+python render_rollout.py --rollout_path=rollout/rollout_0.pkl --output_path=video_simulation/rollout_0.gif
+```
+
