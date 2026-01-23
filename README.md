@@ -17,9 +17,11 @@ As another simplification we considered only two separate materials: Water and S
 
 Datasets are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
 
-*Note* that in order to run our code data must be *converted from .tfrecord to .npz*
+*Note* that, in order to run our code, data must be *converted from .tfrecord to .npz*
 and must preserve the original structure: train, test, split, metadata.
 
+
+# How to use the Simulator:
 Clone the repository:
 ```bash
 git clone https://github.com/matteb29/Simulating-Complex-Physics-with-Graph-Networks.git
@@ -52,4 +54,26 @@ Visualize the comparison between Ground Truth and the generated rollout as a GIF
 mkdir video_simulation
 python render_rollout.py --rollout_path=rollout/rollout_0.pkl --output_path=video_simulation/rollout_0.gif
 ```
+
+# Code Structure
+In this repository you can find the following scripts:
+
+`graph_net.py`: implements the network framework structured as **Encoder-Processor-Decoder**
+
+`learned_simulator.py`: implementation of a Learnable Simulator based on the Encoder-Processor-Decoder
+architecture
+
+`train.py`: this script implements the pipeling of both training and evaluation of our Simulator
+
+`reading_utils.py`: a module to split the dataset in simulation's "frame windows" 
+
+`noise_utils.py`: a module to inject noise during training 
+
+`render_rollout.py`: a module to visualize the rollout results as a GIF
+
+
+
+
+
+
 
