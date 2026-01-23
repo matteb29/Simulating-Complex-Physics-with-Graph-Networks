@@ -76,7 +76,8 @@ architecture
 
 `render_rollout.py`: a module to visualize the rollout results as a GIF
 
-**Note** that the we ran the scripts using CERN SWAN environment so they are optimized to it. Every single training was done using a Tesla T4 GPU and last about 20 hours for a number of Gradient Descent Steps of the order of $10^6$.
+**Note** that the we ran the scripts using CERN SWAN environment so they are optimized to it. Every single training was done using a Tesla T4 GPU and last about 20 hours for a number of Gradient Descent Steps of the order of $10^6$,
+processing 1000 different simulations for each dataset.
 
 
 
