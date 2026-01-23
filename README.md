@@ -41,10 +41,10 @@ pip install -r requirements.txt
 ```
 
 
-Train the model with a specific Dataset (e.g. "Sand" in "datasets" directory):
+Train the model with a specific Dataset (e.g. "Sand" in "datasets" directory) for a specific number of Gradient Updating Steps (e.g. 1000):
 ```bash
 mkdir model_checkpoints
-python train.py --mode=train --data_path=datasets/Sand --model_path=model_checkpoints
+python train.py --mode=train --data_path=datasets/Sand --model_path=model_checkpoints --num_steps=1000
 ```
 
 
@@ -76,7 +76,7 @@ architecture
 
 `render_rollout.py`: a module to visualize the rollout results as a GIF
 
-**Note** that the we ran the scripts using CERN SWAN environment so they are optimized to it. Every single training was done using a Tesla T4 GPU and last about 20 hours.
+**Note** that the we ran the scripts using CERN SWAN environment so they are optimized to it. Every single training was done using a Tesla T4 GPU and last about 20 hours for a number of Gradient Descent Steps of the order of $10^6$.
 
 
 
