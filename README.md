@@ -15,13 +15,15 @@ As another simplification we considered only two separate materials: Water and S
   <em> Example Result: Comparison between Ground Truth (Left) and GN Prediction (Right) for Sand.</em>
 </p>
 
-Datasets are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
+
+# How to use the Simulator:
+
+`Datasets` are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
 
 *Note* that, in order to run our code, data must be *converted from .tfrecord to .npz*
 and must preserve the original structure: train, test, split, metadata.
 
 
-# How to use the Simulator:
 Clone the repository:
 ```bash
 git clone https://github.com/matteb29/Simulating-Complex-Physics-with-Graph-Networks.git
@@ -31,25 +33,28 @@ Move into the directory:
 cd Simulating-Complex-Physics-with-Graph-Networks
 ```
 
-Download the requirements:
+`NOTE` that in this project we use both torch-cluster and torch-scatter.
+These must be installed matching your Pytorch and CUDA versions, see the 
+official installation guide https://pytorch-geometric.readthedocs.io/en/latest/install/installation.html for instructions. Then download the other requirements:
 ```bash
 pip install -r requirements.txt
 ```
 
-Train the model with a specific Dataset (e.g. Sand):
+
+Train the model with a specific Dataset (e.g. "Sand" in "datasets" directory):
 ```bash
 mkdir model_checkpoints
 python train.py --mode=train --data_path=datasets/Sand --model_path=model_checkpoints
 ```
 
 
-Create a rollout with the test set using a specific model (e.g. model_1000.pt)
+Create a rollout with the test set using a specific model (e.g. "model_1000.pt")
 ```bash
 mkdir rollout
 python train.py --mode=eval_rollout --eval_split=test --data_path=datasets/Sand --model_path=model_checkpoints/model_1000.pt --output_path=rollout
 ```
 
-Visualize the comparison between Ground Truth and the generated rollout as a GIF (e.g. rollout_0.pkl)
+Visualize the comparison between Ground Truth and the generated rollout as a GIF (e.g. "rollout_0.pkl")
 ```bash
 mkdir video_simulation
 python render_rollout.py --rollout_path=rollout/rollout_0.pkl --output_path=video_simulation/rollout_0.gif
@@ -70,6 +75,8 @@ architecture
 `noise_utils.py`: a module to inject noise during training 
 
 `render_rollout.py`: a module to visualize the rollout results as a GIF
+
+**Note** that the we ran the scripts using CERN SWAN environment so they are optimized to it. Every single training was done using a Tesla T4 GPU and last about 20 hours.
 
 
 
