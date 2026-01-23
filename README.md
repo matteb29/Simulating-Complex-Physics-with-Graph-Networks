@@ -16,7 +16,7 @@ As another simplification we considered only two separate materials: Water and S
 </p>
 
 
-# How to use the Simulator:
+# How to use the Simulator
 
 `Datasets` are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
 
