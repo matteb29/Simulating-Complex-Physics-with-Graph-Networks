@@ -21,7 +21,7 @@ As another simplification we considered only two separate materials: Water and S
 `Datasets` are all available at the following repository: **https://github.com/google-deepmind/deepmind-research/tree/master/learning_to_simulate**
 
 *Note* that, in order to run our code, data must be *converted from .tfrecord to .npz*
-and must preserve the original structure: train, test, valid, metadata(JSON file).
+and must preserve the original structure, including the train, test, and valid splits, along with the metadata.json file.
 
 
 Clone the repository:
