@@ -4,7 +4,7 @@ This project consists of a simplified version of the Graph-Net Simulator introdu
 
 The problem is reduced to the simulation of the temporal evolution
 of a complex system inside a 2D box (without obstacles in).
-As another simplification we considered only two separate materials: Water and Sand.
+As another simplification only two separate materials are considered: Water and Sand.
 
 
 <p align="center">
