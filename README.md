@@ -1,8 +1,6 @@
 # Simulating-Complex-Physics-with-Graph-Networks
 
-This is our Project for the CMEPDA exam.
-
-It consists of a simplified version of the Graph-Net Simulator introduced by *Sanchez-Gonzalez et al.* in their paper **"Learning to Simulate Complex Physics with Graph Networks"(ICML 2020)**.
+This project consists of a simplified version of the Graph-Net Simulator introduced by *Sanchez-Gonzalez et al.* in their paper **"Learning to Simulate Complex Physics with Graph Networks"(ICML 2020)**.
 
 We reduced the problem to simulate the temporal evolution
 of a complex system inside a 2D box (without obstacles in).
