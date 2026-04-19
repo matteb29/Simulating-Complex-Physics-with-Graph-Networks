@@ -2,6 +2,7 @@
 
 This project consists of a simplified version of the Graph-Net Simulator introduced by *Sanchez-Gonzalez et al.* in their paper **"Learning to Simulate Complex Physics with Graph Networks"(ICML 2020)**.
 
+
 The problem is reduced to the simulation of the temporal evolution
 of a complex system inside a 2D box (without obstacles in).
 As another simplification only two separate materials are considered: Water and Sand.
